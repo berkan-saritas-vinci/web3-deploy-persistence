@@ -6,12 +6,14 @@
   "engines": {
     "node": "24.x"
   },
+
   "scripts": {
-    "dev": "node --watch app.ts",
-    "start": "node app.ts",
-    "typecheck": "tsc --noEmit",
+  "build": "npm install && npx prisma contract emit && npx prisma db update",
+  "dev": "nodemon npm start",
+  "start": "node ./bin/www",
+      "typecheck": "tsc --noEmit",
     "contract:emit": "prisma contract emit"
-  },
+},
   "dependencies": {
     "@prisma/orm-postgres": "^8.0.0-rc.12",
     "cors": "^2.8.6",
