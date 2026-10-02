@@ -16,6 +16,10 @@ function Home() {
 
   const sortedExpenses = [...expenses].sort(sortingAlgo);
 
+  // if(expenses.length == 0){
+  //   return <p>Loading</p>
+  // }
+
   return <div>
     <h1>Manage your expenses</h1>
     <ExpenseAdd addExpense={addExpense} />
