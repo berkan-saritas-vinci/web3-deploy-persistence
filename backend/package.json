@@ -10,7 +10,7 @@
   "scripts": {
   "build": "npm install && npx prisma contract emit && npx prisma db update",
   "dev": "nodemon npm start",
-  "start": "node app.ts",
+  "start": "node ./bin/www",
       "typecheck": "tsc --noEmit",
     "contract:emit": "prisma contract emit"
 },
