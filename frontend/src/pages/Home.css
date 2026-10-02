@@ -1,0 +1,163 @@
+/* ===== Global ===== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", sans-serif;
+    background: linear-gradient(
+        135deg,
+        #0a0a0a,
+        #141e30,
+        #0f172a
+    );
+    color: white;
+    min-height: 100vh;
+}
+
+/* ===== Container ===== */
+
+.home-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+}
+
+/* ===== Titles ===== */
+
+.home-title {
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #00e5ff;
+    text-shadow:
+        0 0 10px #00e5ff,
+        0 0 20px #00e5ff,
+        0 0 40px #00e5ff;
+    margin-bottom: 40px;
+}
+
+.expenses-title {
+    margin-top: 40px;
+    text-align: center;
+    font-size: 1.8rem;
+    color: #ff00ff;
+    text-shadow:
+        0 0 10px #ff00ff,
+        0 0 20px #ff00ff;
+}
+
+/* ===== Actions ===== */
+
+.action-section,
+.sorter-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+/* ===== Expense List ===== */
+
+.expenses-list {
+    list-style: none;
+    padding: 0;
+    margin-top: 30px;
+    display: grid;
+    gap: 20px;
+}
+
+/* ===== Expense Card ===== */
+
+.expense-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    border-radius: 18px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 0 10px rgba(0, 229, 255, 0.2),
+        0 0 25px rgba(0, 229, 255, 0.1);
+
+    transition: all 0.3s ease;
+}
+
+.expense-card:hover {
+    transform: translateY(-5px) scale(1.01);
+
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 0 15px #00e5ff,
+        0 0 30px rgba(0, 229, 255, 0.5);
+}
+
+/* ===== Buttons ===== */
+
+button {
+    background: linear-gradient(
+        135deg,
+        #00e5ff,
+        #6a00ff
+    );
+
+    color: white;
+    border: none;
+
+    padding: 12px 20px;
+    border-radius: 12px;
+
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    transform: scale(1.05);
+
+    box-shadow:
+        0 0 15px #00e5ff,
+        0 0 30px #6a00ff;
+}
+
+/* ===== Inputs ===== */
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+
+    border-radius: 12px;
+    border: 1px solid rgba(0, 229, 255, 0.4);
+
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #00e5ff;
+
+    box-shadow:
+        0 0 10px #00e5ff;
+}
+
+/* ===== Responsive ===== */
+
+@media (max-width: 768px) {
+    .home-title {
+        font-size: 2rem;
+    }
+
+    .home-container {
+        padding: 20px;
+    }
+}

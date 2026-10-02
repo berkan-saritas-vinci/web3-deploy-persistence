@@ -5,6 +5,7 @@ import ExpenseAdd from "../components/ExpenseAdd";
 import useExpenses from "../hooks/useExpenses";
 import ExpenseReset from "../components/ExpenseReset";
 import ExpenseSorter from "../components/ExpenseSorter";
+import "./Home.css"
 
 function Home() {
   const { expenses, addExpense, resetExpenses } = useExpenses();
@@ -20,20 +21,33 @@ function Home() {
   //   return <p>Loading</p>
   // }
 
-  return <div>
-    <h1>Manage your expenses</h1>
+  return (
+  <div className="home-container">
+    <h1 className="home-title">Manage your expenses</h1>
+
     <ExpenseAdd addExpense={addExpense} />
-    <ExpenseReset resetExpenses={resetExpenses}/>
-    <h2>Your expenses</h2>
-    {sortedExpenses.length > 0 && <ExpenseSorter setSortingAlgo={handleAlgoChange} />}
-    <ul>
+
+    <div className="action-section">
+      <ExpenseReset resetExpenses={resetExpenses} />
+    </div>
+
+    <h2 className="expenses-title">Your expenses</h2>
+
+    {sortedExpenses.length > 0 && (
+      <div className="sorter-container">
+        <ExpenseSorter setSortingAlgo={handleAlgoChange} />
+      </div>
+    )}
+
+    <ul className="expenses-list">
       {sortedExpenses.map((expense) => (
-        <li key={expense.id}>
+        <li key={expense.id} className="expense-card">
           <ExpenseItem expense={expense} />
         </li>
       ))}
     </ul>
-  </div>;
+  </div>
+);
 }
 
 export default Home;
